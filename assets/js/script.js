@@ -74,6 +74,19 @@ dental.filter(consulta => consulta.prevision === 'ISAPRE').forEach(consulta => {
     document.write(`<p>${consulta.paciente} - ${consulta.prevision}</p>`);
 });
 
+// Ejercicio 6 
+
+// Se imprime titulo del ejercicio 4
+document.write('<h2>Pacientes traumatología con Fonosa</h2>');
+
+// Agregamos con metodo push el objeto anteriormente eliminado
+traumatologia.push({hora: '8:00',  especialista: 'MARIA PAZ ALTUZARRA', paciente: 'PAULA SANCHEZ',     rut: '15554774-5', prevision: 'FONASA'});
+
+// Se Filtran los pacientes con FONASA en TRAUMATOLOGÍA
+traumatologia.filter(consulta => consulta.prevision === 'FONASA').forEach(consulta => {
+    document.write(`<p>${consulta.paciente} - ${consulta.prevision}</p>`);
+});
+// Fin
 
 // Muestro un separador de línea para separar lo que nos proporciono el ejercicio
 document.write(`<hr>`);
