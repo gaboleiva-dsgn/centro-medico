@@ -1,5 +1,4 @@
 // Ejercicio 1
-
 // Se agregan las horas de radiología 
 let radiologia = [
     {hora: '11:00', especialista: 'IGNACIO SCHULZ', paciente: 'FRANCISCA ROJAS', rut: '9878782-1', prevision: 'FONASA'},
@@ -33,6 +32,7 @@ let dental = [
 // Se agraga un Titulo h1 a nuestro html con 
 document.write('<h1>Estadisticas centro medico ñuñoa</h1>');
 
+// Ejercicio 2
 // Se eliminan el primero y el último paciente
 traumatologia.shift();
 traumatologia.pop();
@@ -43,6 +43,7 @@ traumatologia.forEach(function(consultaTrauma) {
     document.write("<p>" + consultaTrauma.hora + " / " + consultaTrauma.especialista + " / " + consultaTrauma.paciente + " / " + consultaTrauma.rut + " / " + consultaTrauma.prevision + "</p>");
 });
 
+// Ejercicio 3
 // Se imprime las horas dentales tal como pide el ejercicio.
 
 document.write("<h2>Consultas Dentales</h2>");
@@ -63,6 +64,15 @@ allPacientes.forEach(function(allPacientes) {
     document.write('<p>' + allPacientes.paciente + '</p>');
 });
 
+// Ejercicio 5
+
+// Se imprime titulo del ejercicio 4
+document.write("<h2>Pacientes dentales con Isapre</h2>");
+
+// Se Filtran los pacientes con ISAPRE en Dental
+dental.filter(consulta => consulta.prevision === 'ISAPRE').forEach(consulta => {
+    document.write(`<p>${consulta.paciente} - ${consulta.prevision}</p>`);
+});
 
 
 // Muestro un separador de línea para separar lo que nos proporciono el ejercicio
