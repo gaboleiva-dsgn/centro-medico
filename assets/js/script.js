@@ -1,7 +1,7 @@
 // Ejercicio 1
 
 // Se agregan las horas de radiología 
-var radiologia = [
+let radiologia = [
     {hora: '11:00', especialista: 'IGNACIO SCHULZ', paciente: 'FRANCISCA ROJAS', rut: '9878782-1', prevision: 'FONASA'},
     {hora: '11:30', especialista: 'FEDERICO SUBERCASEAUX', paciente: 'PAMELA ESTRADA', rut: '15345241-3', prevision: 'ISAPRE'},
     {hora: '15:00', especialista: 'FERNANDO WURTHZ', paciente: 'ARMANDO LUNA', rut: '16445345-9', prevision: 'ISAPRE'},
@@ -10,7 +10,7 @@ var radiologia = [
 ];
 
 // Se agregan las horas de traumatología 
-var traumatologia = [
+let traumatologia = [
     {hora: '8:00',  especialista: 'MARIA PAZ ALTUZARRA', paciente: 'PAULA SANCHEZ',     rut: '15554774-5', prevision: 'FONASA'},
     {hora: '10:00', especialista: 'RAUL ARAYA',          paciente: 'ANGÉLICA NAVAS',    rut: '15444147-9', prevision: 'ISAPRE'},
     {hora: '10:30', especialista: 'MARIA ARRIAGADA',     paciente: 'ANA KLAPP',         rut: '17879423-9', prevision: 'ISAPRE'},
@@ -21,7 +21,7 @@ var traumatologia = [
 ];
 
 // Se agregan las horas de dental 
-var dental = [
+let dental = [
     {hora: '8:30',  especialista: 'ANDREA ZUÑIGA',          paciente: 'MARCELA RETAMAL',rut: '11123425-6', prevision: 'ISAPRE'},
     {hora: '11:00', especialista: 'MARIA PIA ZAÑARTU',      paciente: 'ANGEL MUÑOZ',    rut: '9878789-2',  prevision: 'ISAPRE'},
     {hora: '11:30', especialista: 'SCARLETT WITTING',       paciente: 'MARIO KAST',     rut: '7998789-5',  prevision: 'FONASA'},
@@ -45,14 +45,29 @@ traumatologia.forEach(function(consultaTrauma) {
 
 // Se imprime las horas dentales tal como pide el ejercicio.
 
-document.write("<h2>Consultas Médicas de Dental</h2>");
+document.write("<h2>Consultas Dentales</h2>");
     dental.forEach(function(consultaDental) {
         document.write("<p>" + consultaDental.hora + " - " + consultaDental.especialista + " - " + consultaDental.paciente + " - " + consultaDental.rut + " - " + consultaDental.prevision + "</p>");
     });
 
+// Ejercicio 4
+
+// Se crea variable para capturar a todos los pacientes con el metodo concatenar
+let allPacientes = dental.concat(traumatologia, radiologia);
+
+// Se imprime titulo del ejercicio 4
+document.write("<h2>Pacientes totales</h2>");
+
+// Se crea crea crea un bucle con forEach para recorrer la variable allPacientes e imprimir el valor paciente de cada arreglo de objetos ya concatenados
+allPacientes.forEach(function(allPacientes) {
+    document.write('<p>' + allPacientes.paciente + '</p>');
+});
+
+
 
 // Muestro un separador de línea para separar lo que nos proporciono el ejercicio
 document.write(`<hr>`);
+
 //Agregar código para el desafio 2 aquí
 document.write(`<p>Cantidad de atenciones para Radiología: ${radiologia.length}</p>`);
 document.write(`<p>Cantidad de atenciones para Traumatología: ${traumatologia.length}</p>`);
